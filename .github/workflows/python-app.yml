@@ -22,9 +22,10 @@ jobs:
         python-version: "3.7.9"
     - name: Install dependencies
       run: |
+        pip install virtualenv
+        virtualenv rasa
         python -m venv rasa
-        set-executionpolicy remotesigned
-        rasa\scripts\activate
+        rasa\Scripts\activate
 #         cd Github
 #         git clone https://github.com/Pemari-Technology/clai-rasa.git
 #         cd clai-rasa
