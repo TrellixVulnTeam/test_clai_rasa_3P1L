@@ -19,10 +19,32 @@ jobs:
     - name: Set up Python 3.10
       uses: actions/setup-python@v2
       with:
-        python-version: "3.10"
+        python-version: "3.7.9"
     - name: Install dependencies
       run: |
+        python -m venv rasa
+        rasa\scripts\activate
+        cd Github
+        git clone https://github.com/Pemari-Technology/clai-rasa.git
+        cd clai-rasa
         python -m pip install --upgrade pip
+        cd clai-rasa
+        poetry install --extras full --no-dev --no-root --no-interaction
+        pip install wheel
+        cd rasa_addons
+        mkdir rasa_addons
+        move core rasa_addons\core
+        move importers rasa_addons\importers
+        move nlu rasa_addons\nlu
+        move __init__.py rasa_addons
+        move utils.py rasa_addons
+        python setup.py install
+        cd ..
+        poetry build -f wheel -n
+        pip install --no-deps dist\rasa-2.8.7-py3-none-any.whl
+        python -m spacy download en_core_web_md
+        pip install xmltodict
+        
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
