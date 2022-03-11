@@ -22,37 +22,38 @@ jobs:
         python-version: "3.7.9"
     - name: Install dependencies
       run: |
+        pipenv install
         python -m venv rasa
         rasa//scripts//activate
-        cd Github
-        git clone https://github.com/Pemari-Technology/clai-rasa.git
-        cd clai-rasa
-        python -m pip install --upgrade pip
-        cd clai-rasa
-        poetry install --extras full --no-dev --no-root --no-interaction
-        pip install wheel
-        cd rasa_addons
-        mkdir rasa_addons
-        move core rasa_addons\core
-        move importers rasa_addons\importers
-        move nlu rasa_addons\nlu
-        move __init__.py rasa_addons
-        move utils.py rasa_addons
-        python setup.py install
-        cd ..
-        poetry build -f wheel -n
-        pip install --no-deps dist\rasa-2.8.7-py3-none-any.whl
-        python -m spacy download en_core_web_md
-        pip install xmltodict
+#         cd Github
+#         git clone https://github.com/Pemari-Technology/clai-rasa.git
+#         cd clai-rasa
+#         python -m pip install --upgrade pip
+#         cd clai-rasa
+#         poetry install --extras full --no-dev --no-root --no-interaction
+#         pip install wheel
+#         cd rasa_addons
+#         mkdir rasa_addons
+#         move core rasa_addons\core
+#         move importers rasa_addons\importers
+#         move nlu rasa_addons\nlu
+#         move __init__.py rasa_addons
+#         move utils.py rasa_addons
+#         python setup.py install
+#         cd ..
+#         poetry build -f wheel -n
+#         pip install --no-deps dist\rasa-2.8.7-py3-none-any.whl
+#         python -m spacy download en_core_web_md
+#         pip install xmltodict
         
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest
+#         pip install flake8 pytest
+#         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+#     - name: Lint with flake8
+#       run: |
+#         # stop the build if there are Python syntax errors or undefined names
+#         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+#         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+#         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+#     - name: Test with pytest
+#       run: |
+#         pytest
