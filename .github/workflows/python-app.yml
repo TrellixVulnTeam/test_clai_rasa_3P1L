@@ -22,7 +22,6 @@ jobs:
         python-version: "3.7.9"
     - name: Install dependencies
       run: |
-        pipenv install
         python -m venv rasa
         set-executionpolicy remotesigned
         rasa\scripts\activate
