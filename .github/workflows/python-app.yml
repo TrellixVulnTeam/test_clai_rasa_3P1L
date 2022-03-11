@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m venv rasa
-        rasa/scripts/activate
+        rasa\\scripts\\activate
         cd Github
         git clone https://github.com/Pemari-Technology/clai-rasa.git
         cd clai-rasa
