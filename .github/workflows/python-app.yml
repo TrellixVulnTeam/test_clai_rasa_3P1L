@@ -25,7 +25,7 @@ jobs:
         python -m venv rasaenv
         cd /home/runner/work/test_clai_rasa/test_clai_rasa
         ls
-        rasaenv/bin/activate.bat
+        source rasaenv/bin/activate.bat
 #        rasaenv\Scripts\activate
 #         cd Github
 #         git clone https://github.com/Pemari-Technology/clai-rasa.git
