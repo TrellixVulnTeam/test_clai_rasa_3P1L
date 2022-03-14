@@ -25,7 +25,7 @@ jobs:
         python -m venv rasaenv
         cd /home/runner/work/test_clai_rasa/test_clai_rasa/rasaenv/bin
         ls
-        /home/runner/work/test_clai_rasa/test_clai_rasa/rasaenv/bin/activate
+        /home/runner/work/test_clai_rasa/test_clai_rasa/rasaenv/bin/activate.csh
 #        /home/runner/work/test_clai_rasa/test_clai_rasa/rasaenv/bin/activate
 #        rasaenv\Scripts\activate
 #         cd Github
