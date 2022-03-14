@@ -25,7 +25,8 @@ jobs:
         pip install virtualenv
         virtualenv rasa
         python -m venv rasa
-        .\rasa\Scripts\activate
+        source rasa\Scripts\activate
+        echo "VIRTUAL ENV:" $VIRTUAL_ENV
 #         cd Github
 #         git clone https://github.com/Pemari-Technology/clai-rasa.git
 #         cd clai-rasa
