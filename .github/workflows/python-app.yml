@@ -24,6 +24,7 @@ jobs:
       run: |
         python -m venv rasa
         echo "VIRTUAL ENV:" $VIRTUAL_ENV
+        ls
 #         cd Github
 #         git clone https://github.com/Pemari-Technology/clai-rasa.git
 #         cd clai-rasa
