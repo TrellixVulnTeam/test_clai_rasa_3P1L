@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m venv rasaenv
-        cd /home/runner/work/test_clai_rasa
+        cd /home/runner/work/test_clai_rasa/test_clai_rasa
         ls
 #        . rasaenv\bin\activate
 #        rasaenv\Scripts\activate
