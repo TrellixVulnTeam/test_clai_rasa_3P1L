@@ -24,7 +24,6 @@ jobs:
       run: |
         python -m venv rasaenv
         echo "VIRTUAL ENV:" $VIRTUAL_ENV
-        ls
         cd rasaenv
         ls
 #        rasaenv\Scripts\activate
