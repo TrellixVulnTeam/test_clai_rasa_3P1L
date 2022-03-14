@@ -26,7 +26,7 @@ jobs:
         echo "VIRTUAL ENV:" $VIRTUAL_ENV
         cd rasaenv
         ls
-        pyvenv\activate
+        bin\activate
 #        rasaenv\Scripts\activate
 #         cd Github
 #         git clone https://github.com/Pemari-Technology/clai-rasa.git
