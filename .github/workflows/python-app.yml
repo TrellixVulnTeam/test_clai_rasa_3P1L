@@ -22,8 +22,6 @@ jobs:
         python-version: "3.7.9"
     - name: Install dependencies
       run: |
-        pip install virtualenv
-        virtualenv rasa
         python -m venv rasa
         source rasa\Scripts\activate
         echo "VIRTUAL ENV:" $VIRTUAL_ENV
