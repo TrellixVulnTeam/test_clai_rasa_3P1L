@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m venv rasaenv
-        cd /home/runner/
+        cd /home/runner/work
         ls
 #        . rasaenv\bin\activate
 #        rasaenv\Scripts\activate
